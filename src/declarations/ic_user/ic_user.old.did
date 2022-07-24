@@ -1,3 +1,12 @@
+type UserData = 
+ record {
+   description: text;
+   id: nat;
+   name: text;
+   registeredAt: int;
+ };
 service : {
+  createUser: (principal, text, text) -> (nat);
+  getUserData: (principal) -> (opt UserData) query;
   hello: () -> (text) query;
 }
